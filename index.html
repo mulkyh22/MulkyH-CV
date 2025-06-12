@@ -292,7 +292,7 @@
         }
 
         #ai-chat-log {
-            height: 12rem; /* 192px */
+            height: 12rem;
             overflow-y: auto;
             scroll-behavior: smooth;
         }
@@ -385,7 +385,6 @@
         </div>
     </header>
     
-    <!-- Gemini AI Assistant Panel -->
     <section id="ai-assistant-panel" class="glass-panel custom-rounded-card p-6 relative">
          <button id="ai-close-button" class="absolute top-4 right-4 status-button rounded-full flex items-center justify-center text-xl w-8 h-8 z-10">
             <span class="material-symbols-rounded">close</span>
@@ -396,7 +395,6 @@
         </div>
         <div class="flex flex-col space-y-4">
             <div id="ai-chat-log" class="flex-grow space-y-4 pr-2">
-                <!-- Chat messages will be appended here -->
             </div>
             <div class="flex items-center gap-2">
                 <input id="ai-prompt-input" type="text" placeholder="Ask about my skills..." class="w-full p-3 inner-element bg-[var(--skill-tag-bg)] border border-transparent focus:ring-2 focus:ring-[var(--timeline-dot-bg)] focus:outline-none transition-shadow">
@@ -410,8 +408,8 @@
 
     <main class="main-content container mx-auto p-4 md:p-8 flex-grow">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-start">
-            
             <div id="left-column" class="md:col-span-1 space-y-8 transition-all duration-500 ease-in-out">
+
                 <section id="profile-section" class="glass-panel custom-rounded-card p-6 text-center">
                     <img src="https://media1.tenor.com/m/AM7ADg93w8wAAAAd/gura-%E3%81%90%E3%82%89.gif" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white/50 shadow-md">
                     <h1 class="text-3xl font-bold">Mulky H</h1>
@@ -419,6 +417,16 @@
                     <p class="text-sm mt-4 leading-relaxed">
                         Entry-Mid Networking | SDET | Front-End Dev | Game-Dev | SDLC | Systems & Hardware Tech Specialist
                     </p>
+                </section>
+
+                <section class="glass-panel custom-rounded-card p-6">
+                    <div class="section-header">
+                        <span class="material-symbols-rounded">warning</span>
+                        <h2 class="text-2xl font-semibold">Author Note</h2>
+                    </div>
+                    <div>
+                        <p class="text-sm text-center">Please excuse the profile picture, as I rarely take photos of myself.</p>
+                    </div>
                 </section>
 
                 <section class="glass-panel custom-rounded-card p-6">
@@ -521,6 +529,7 @@
                                         <p class="text-sm">Proficient in network entry-mid level management fundamentals, including configuration and troubleshooting.</p>
                                     </div>
                                 </div>
+                                <p class="text-sm font-medium">Note : Please excuse the profile picture, as I rarely take photos of myself.</p>
                             </div>
                         </div>
                         <div id="experience" class="tab-panel">
