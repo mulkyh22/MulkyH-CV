@@ -873,7 +873,7 @@
 
             const apiKey = "AIzaSyCY5uWCebLRc6jov59mW3iZ_eaWRhHsf5k";
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-            const prompt = `Based on this CV: "${cvContext}". Answer the following question concisely more short are better and in a friendly tone, and with a maximum of 15 words. Question: "${question}"`;
+            const prompt = `Based on this CV: "${cvContext}". Answer in <15 words, friendly. Asked by interested people, not author. Question: "${question}"`;
             const payload = { contents: [{ parts: [{ text: prompt }] }] };
 
             try {
