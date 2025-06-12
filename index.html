@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulky H | Curriculum vitae (CV)</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+    <style>
+        :root {
+            --bg-color-start: #f5f7fa;
+            --bg-color-end: #c3cfe2;
+            --text-color-primary: #1a202c;
+            --text-color-secondary: #4a5568;
+            --text-color-tertiary: #718096;
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --glass-refraction: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+            --panel-shadow: rgba(31, 38, 135, 0.15);
+            --scrollbar-track-bg: rgba(255, 255, 255, 0.1);
+            --scrollbar-thumb-bg: rgba(255, 255, 255, 0.4);
+            --skill-tag-bg: rgba(255, 255, 255, 0.5);
+            --skill-tag-hover-bg: rgba(0,0,0,0.07);
+            --timeline-dot-bg: #8B5CF6;
+            --tab-active-bg: rgba(255, 255, 255, 0.6);
+            --tab-text-active: #1a202c;
+            --tab-slider-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            --transition-smooth: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        .dark {
+             --bg-color-start: #1a202c;
+             --bg-color-end: #2d3748;
+             --text-color-primary: #edf2f7;
+             --text-color-secondary: #a0aec0;
+             --text-color-tertiary: #718096;
+             --glass-bg: rgba(15, 15, 25, 0.6);
+             --glass-border: rgba(255, 255, 255, 0.08);
+             --glass-refraction: inset 0 0 0 1.5px rgba(255, 255, 255, 0.08);
+             --panel-shadow: rgba(0, 0, 0, 0.3);
+             --scrollbar-track-bg: rgba(0, 0, 0, 0.1);
+             --scrollbar-thumb-bg: rgba(0, 0, 0, 0.4);
+             --skill-tag-bg: rgba(255, 255, 255, 0.08);
+             --skill-tag-hover-bg: rgba(255,255,255,0.1);
+             --timeline-dot-bg: #A78BFA;
+             --tab-active-bg: rgba(255, 255, 255, 0.15);
+             --tab-text-active: #edf2f7;
+             --tab-slider-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-color-start) 0%, var(--bg-color-end) 100%);
+            color: var(--text-color-primary);
+            transition: background 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
+        }
+        
+        .theme-transition, .theme-transition * {
+            transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, background 0.5s ease;
+        }
+
+        #loader {
+            position: fixed; width: 100%; height: 100%; top: 0; left: 0;
+            background: var(--bg-color-start); z-index: 100;
+            display: flex; justify-content: center; align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        #loader.hidden { opacity: 0; visibility: hidden; }
+        .spinner {
+            width: 48px; height: 48px; border-radius: 50%;
+            border: 5px solid var(--text-color-tertiary);
+            border-top-color: var(--timeline-dot-bg);
+            animation: spin 1s infinite linear;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .background-container {
+            position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
+            z-index: -1;
+        }
+        .bg-shape {
+            position: absolute; border-radius: 40%;
+            filter: blur(256px); opacity: 1.0;
+        }
+        .dark .bg-shape { opacity: 0.5; }
+        .shape-1 {
+            width: 80%; height: 80%;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            top: 5%; left: 5%;
+            animation: drift 6s infinite alternate ease-in-out;
+        }
+        .shape-2 {
+            width: 50%; height: 50%;
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+            bottom: 10%; right: 15%;
+            animation: drift 7.5s infinite alternate-reverse ease-in-out;
+        }
+        .shape-3 {
+            width: 40%; height: 40%;
+            background: linear-gradient(135deg, #fceabb, #f8b500);
+            bottom: 30%; left: 20%;
+            animation: drift 5s infinite alternate ease-in-out;
+        }
+        @keyframes drift {
+            from { transform: rotate(0deg) scale(1) translateX(0); }
+            to { transform: rotate(270deg) scale(1.1) translateX(150px); }
+        }
+        
+        @keyframes fade-slide-in {
+             from { opacity: 0; transform: translateY(20px); }
+             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(28px) saturate(150%);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-refraction);
+            transition: var(--transition-smooth);
+            will-change: transform, opacity;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .glass-panel.loaded {
+            opacity: 1;
+            transform: translateY(0);
+            animation: fade-slide-in 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        .glass-panel:not(#status-bar):not(#ai-assistant-panel):hover {
+            box-shadow: 0 8px 32px 0 var(--panel-shadow), var(--glass-refraction);
+            transform: translateY(-5px);
+        }
+
+        #ai-assistant-panel:hover {
+            box-shadow: 0 8px 32px 0 var(--panel-shadow), var(--glass-refraction);
+        }
+        
+        .custom-rounded-card { border-radius: 36px; }
+        .inner-element { border-radius: 12px; }
+        
+        #status-bar {
+            transition: var(--transition-smooth);
+            width: fit-content;
+        }
+        #status-bar.hidden-top-element {
+            transform: translateY(-150%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #greeting {
+            transition: opacity 0.5s ease-in-out, max-width 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+            max-width: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .status-button, #ask-ai-button {
+            background: var(--skill-tag-bg);
+            transition: background-color 0.3s ease;
+        }
+        .status-button:hover, #ask-ai-button:hover {
+             background-color: var(--skill-tag-hover-bg);
+        }
+        #ask-ai-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        main.main-content {
+            padding-top: 6rem;
+        }
+        
+        .section-header {
+            display: flex; align-items: center; gap: 0.75rem;
+            margin-bottom: 1rem; padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        h1, h2, h3 { color: var(--text-color-primary); }
+        p, span, div, li { color: var(--text-color-secondary); }
+        .skill-tag { 
+            background-color: var(--skill-tag-bg); 
+            color: var(--text-color-primary); 
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .skill-tag:hover {
+            background-color: var(--skill-tag-hover-bg);
+        }
+
+        #tab-slider {
+            position: absolute; height: 100%;
+            background-color: var(--tab-active-bg);
+            box-shadow: var(--tab-slider-shadow);
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+        }
+        .tab-button { 
+            transition: color 0.3s ease, background-color 0.3s ease;
+            position: relative; z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .tab-button:not(.active):hover {
+            background-color: var(--skill-tag-hover-bg);
+        }
+        .tab-button.active { color: var(--tab-text-active); }
+        
+        #panels-wrapper {
+            position: relative;
+            overflow: hidden;
+            transition: height 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        .tab-panel {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .tab-panel.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-tabs { overflow-x: auto; scrollbar-width: none; display: inline-flex; }
+        .nav-tabs::-webkit-scrollbar { display: none; }
+        
+        .custom-list li {
+            position: relative; padding-left: 1.25rem; margin-bottom: 0.25rem;
+        }
+        .custom-list li::before {
+            content: '·'; position: absolute; left: 0.25rem;
+            font-weight: bold; color: var(--text-color-secondary);
+        }
+        
+        .timeline-container {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 10px;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            width: 2px;
+            background-color: var(--glass-border);
+        }
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem; 
+            top: 0.5rem; 
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--timeline-dot-bg);
+            border: 2px solid var(--glass-bg);
+            margin-left: 5px; 
+            z-index: 1;
+        }
+        .timeline-item:not(:last-child) {
+             padding-bottom: 2rem;
+        }
+        
+        #ai-assistant-panel {
+            position: fixed;
+            top: 5.5rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            z-index: 35;
+            width: 90%;
+            max-width: 42rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+        }
+        #ai-assistant-panel.visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        #ai-chat-log {
+            height: 12rem; /* 192px */
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+        .ai-message, .user-message {
+            padding: 0.75rem;
+            border-radius: 1rem;
+            max-width: 85%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background-color: var(--timeline-dot-bg);
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 0.25rem;
+            animation: slide-in-chat-user 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .dark .user-message {
+            background-color: var(--timeline-dot-bg);
+        }
+        .ai-message {
+            background-color: var(--skill-tag-bg);
+            border-bottom-left-radius: 0.25rem;
+            animation: slide-in-chat-ai 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        @keyframes slide-in-chat-user {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slide-in-chat-ai {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background-color: var(--text-color-tertiary);
+            border-radius: 50%;
+            display: inline-block;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track-bg); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb-bg); border-radius: 10px; border: 1px solid var(--glass-border); }
+        
+        .icons-only .tab-text {
+             display: none;
+        }
+        .icons-only .tab-button {
+            flex: 1;
+            justify-content: center;
+        }
+        .icons-only .nav-tabs {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <div id="loader"><div class="spinner"></div></div>
+    
+    <div class="background-container">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+    </div>
+    
+    <header id="status-bar" class="fixed top-0 left-0 right-0 z-40 glass-panel custom-rounded-card mx-auto mt-4">
+        <div class="flex items-center justify-between px-3 py-2 space-x-2">
+            <div id="clock" class="text-sm font-semibold pl-1"></div>
+            <div id="greeting" class="text-sm font-semibold whitespace-nowrap px-2"></div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+                <button id="ai-toggle-button" class="status-button rounded-full flex items-center justify-center text-xl w-8 h-8">
+                    <span class="material-symbols-rounded">smart_toy</span>
+                </button>
+                 <button id="theme-toggle" class="status-button rounded-full flex items-center justify-center text-xl w-8 h-8">
+                    <span id="theme-icon-light" class="hidden material-symbols-rounded">light_mode</span>
+                    <span id="theme-icon-dark" class="hidden material-symbols-rounded">dark_mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Gemini AI Assistant Panel -->
+    <section id="ai-assistant-panel" class="glass-panel custom-rounded-card p-6 relative">
+         <button id="ai-close-button" class="absolute top-4 right-4 status-button rounded-full flex items-center justify-center text-xl w-8 h-8 z-10">
+            <span class="material-symbols-rounded">close</span>
+        </button>
+        <div class="section-header">
+            <span class="material-symbols-rounded">smart_toy</span>
+            <h2 class="text-2xl font-semibold">AI Assistant</h2>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div id="ai-chat-log" class="flex-grow space-y-4 pr-2">
+                <!-- Chat messages will be appended here -->
+            </div>
+            <div class="flex items-center gap-2">
+                <input id="ai-prompt-input" type="text" placeholder="Ask about my skills..." class="w-full p-3 inner-element bg-[var(--skill-tag-bg)] border border-transparent focus:ring-2 focus:ring-[var(--timeline-dot-bg)] focus:outline-none transition-shadow">
+                <button id="ask-ai-button" class="flex-shrink-0 status-button rounded-full flex items-center justify-center text-xl w-12 h-12">
+                     <span id="ask-ai-button-icon" class="material-symbols-rounded">send</span>
+                     <div id="ai-spinner" class="spinner !w-5 !h-5 !border-2 hidden"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content container mx-auto p-4 md:p-8 flex-grow">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-start">
+            
+            <div id="left-column" class="md:col-span-1 space-y-8 transition-all duration-500 ease-in-out">
+                <section id="profile-section" class="glass-panel custom-rounded-card p-6 text-center">
+                    <img src="https://media1.tenor.com/m/AM7ADg93w8wAAAAd/gura-%E3%81%90%E3%82%89.gif" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white/50 shadow-md">
+                    <h1 class="text-3xl font-bold">Mulky H</h1>
+                    <p class="text-lg mt-1">IT Technical Generalist</p>
+                    <p class="text-sm mt-4 leading-relaxed">
+                        Entry-Mid Networking | SDET | Front-End Dev | Game-Dev | SDLC | Systems & Hardware Tech Specialist
+                    </p>
+                </section>
+
+                <section class="glass-panel custom-rounded-card p-6">
+                    <div class="section-header">
+                        <span class="material-symbols-rounded">school</span>
+                        <h2 class="text-2xl font-semibold">Education</h2>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">Universitas Komputer Indonesia</h3>
+                        <p class="text-sm">Major in Informatic Engineering</p>
+                        <p class="text-sm mt-1">Cumulative GPA :</p>
+                        <p class="text-xs italic">3.64 [2020 - 2024]</p>
+                        <p class="text-sm mt-1">Relevant Course :</p>
+                        <p class="text-xs italic">Algorithm, Data Structure, Object-Oriented Programming, Software-Testing.</p>
+                    </div>
+                </section>
+                
+                <section class="glass-panel custom-rounded-card p-6">
+                    <div class="section-header">
+                        <span class="material-symbols-rounded">language</span>
+                        <h2 class="text-2xl font-semibold">Languages</h2>
+                    </div>
+                     <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-semibold text-base">Bahasa Indonesia</h3>
+                            <p class="text-sm italic text-right">Native</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-semibold text-base">English</h3>
+                            <div class="flex flex-col items-end">
+                                <p class="text-sm italic">Fluent Written</p>
+                                <p class="text-xs italic text-[var(--text-color-tertiary)]">[TOEFL 540]</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                             <h3 class="font-semibold text-base">日本語 (Japanese)</h3>
+                             <div class="flex flex-col items-end">
+                                <p class="text-sm italic">Passive</p>
+                                <p class="text-xs italic text-[var(--text-color-tertiary)]">[JLPT N4]</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="right-column" class="md:col-span-2 transition-all duration-500 ease-in-out">
+                <div id="main-content-panel" class="glass-panel custom-rounded-card p-4 sm:p-6 flex flex-col">
+                    <div class="mb-4 border-b border-[var(--glass-border)] flex justify-center">
+                        <div class="nav-tabs-container">
+                            <nav id="nav-tabs" class="nav-tabs -mb-px relative" aria-label="Tabs">
+                                <div id="tab-slider"></div>
+                                <button data-tab="introduction" class="tab-button flex-shrink-0 whitespace-nowrap py-3 px-4 inner-element text-sm font-medium">
+                                    <span class="tab-icon material-symbols-rounded">person</span>
+                                    <span class="tab-text">Introduction</span>
+                                </button>
+                                <button data-tab="experience" class="tab-button flex-shrink-0 whitespace-nowrap py-3 px-4 inner-element text-sm font-medium">
+                                    <span class="tab-icon material-symbols-rounded">work</span>
+                                    <span class="tab-text">Experiences</span>
+                                </button>
+                                <button data-tab="skills" class="tab-button flex-shrink-0 whitespace-nowrap py-3 px-4 inner-element text-sm font-medium">
+                                    <span class="tab-icon material-symbols-rounded">construction</span>
+                                    <span class="tab-text">Technical Skills</span>
+                                </button>
+                                <button data-tab="certifications" class="tab-button flex-shrink-0 whitespace-nowrap py-3 px-4 inner-element text-sm font-medium">
+                                    <span class="tab-icon material-symbols-rounded">verified</span>
+                                    <span class="tab-text">Certifications</span>
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div id="panels-wrapper">
+                        <div id="introduction" class="tab-panel">
+                            <div class="space-y-6 text-center">
+                                <img src="https://media1.tenor.com/m/AM7ADg93w8wAAAAd/gura-%E3%81%90%E3%82%89.gif" alt="Profile Picture" class="rounded-full mx-auto mb-2 border-4 border-white/50 shadow-md" style="width: 240px; height: 240px;">
+                                <h2 class="text-3xl font-bold tracking-tight">Hello! I'm Mulky H.</h2>
+                                <p class="text-lg max-w-2xl mx-auto">
+                                    IT Generalist & Systems/Hardware Technical Specialist with hands-on experience in Networking, SDET Automation, Front-End Development, and Game Programming. Skilled in SDLC, QA, and Graphics Performance Analysis.
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-center">
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-center gap-3">
+                                            <span class="material-symbols-rounded text-3xl text-[var(--timeline-dot-bg)]">code</span>
+                                            <h3 class="font-semibold text-lg">Development</h3>
+                                        </div>
+                                        <p class="text-sm">Building and maintaining web front-end and video game in technical features with a focus on quality and performance.</p>
+                                    </div>
+                                    <div class="space-y-2">
+                                         <div class="flex items-center justify-center gap-3">
+                                            <span class="material-symbols-rounded text-3xl text-[var(--timeline-dot-bg)]">rule</span>
+                                            <h3 class="font-semibold text-lg">Quality Assurance</h3>
+                                        </div>
+                                        <p class="text-sm">Specializing in both manual and automated testing (SDET) to ensure software is stable, reliable, and meets all requirements.</p>
+                                    </div>
+                                    <div class="space-y-2">
+                                         <div class="flex items-center justify-center gap-3">
+                                            <span class="material-symbols-rounded text-3xl text-[var(--timeline-dot-bg)]">lan</span>
+                                            <h3 class="font-semibold text-lg">Networking</h3>
+                                        </div>
+                                        <p class="text-sm">Proficient in network entry-mid level management fundamentals, including configuration and troubleshooting.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="experience" class="tab-panel">
+                             <div class="space-y-8">
+                                <div>
+                                    <div class="flex items-center space-x-2 mb-4">
+                                        <span class="material-symbols-rounded text-2xl">work</span>
+                                        <h2 class="text-xl font-bold">Freelance Work Experiences</h2>
+                                    </div>
+                                    <div class="timeline-container">
+                                        <div class="timeline-line"></div>
+                                        <div class="space-y-4">
+                                            <div class="timeline-item">
+                                                 <h3 class="font-semibold text-lg">Front-End Web Development and Quality Assurance (Automation and Manual)</h3>
+                                                 <p class="text-sm font-medium">Freelance</p>
+                                                 <ul class="custom-list text-sm mt-2">
+                                                    <li>Integrating Front-End Interface based on requirements.</li>
+                                                    <li>Create manual test cases and develop automated test scripts based on requirements.</li>
+                                                    <li>Conduct automation testing for web platforms using Selenium and other tools as required.</li>
+                                                    <li>Perform mobile testing with Appium, debug issues using Android Studio and emulator tools.</li>
+                                                 </ul>
+                                            </div>
+                                            <div class="timeline-item">
+                                                 <h3 class="font-semibold text-lg">Technical Game Development</h3>
+                                                 <p class="text-sm font-medium">Freelance</p>
+                                                 <p class="text-sm leading-relaxed mt-2">Note: Contact to view portfolio for these jobs, as since it using a pen name.</p>
+                                                 <ul class="custom-list text-sm mt-2">
+                                                    <li>Technical programming using C# (Unity), C++/BP (Unreal), & GDScript (Godot).</li>
+                                                    <li>Analyse 3D rendering performance using profiling tools like NVIDIA Nsight and RenderDoc.</li>
+                                                    <li>Creating 2D and 3D animations/assets, primarily for Game Jam development.</li>
+                                                 </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="my-8 border-t border-[var(--glass-border)]"></div>
+                                    <div class="flex items-center space-x-2 mb-4">
+                                        <span class="material-symbols-rounded text-2xl">domain</span>
+                                        <h2 class="text-xl font-bold">Company Work Experiences</h2>
+                                    </div>
+                                    <div class="timeline-container">
+                                        <div class="timeline-line"></div>
+                                        <div class="space-y-4">
+                                            <div class="timeline-item">
+                                                 <h3 class="font-semibold text-lg">Front End & Automation Quality Assurance | PT. Cipta Buana Kunshuliyyah</h3>
+                                                 <p class="text-sm font-medium">Internship</p>
+                                                 <p class="text-xs italic mb-2">Aug 2023 - Dec 2023</p>
+                                                 <ul class="custom-list text-sm">
+                                                    <li>Developed desktop-oriented front-end web interfaces using React.</li>
+                                                    <li>Created test cases and automated scripts to support end-to-end and regression QA processes.</li>
+                                                    <li>Conducted website testing using Selenium to validate front-end functionality.</li>
+                                                 </ul>
+                                            </div>
+                                            <div class="timeline-item">
+                                                 <h3 class="font-semibold text-lg">Automation Quality Assurance | PT. Memory Netindo Jaya</h3>
+                                                 <p class="text-sm font-medium">Internship</p>
+                                                 <p class="text-xs italic mb-2">Feb 2023 - Apr 2023</p>
+                                                 <ul class="custom-list text-sm">
+                                                    <li>Designed test cases and scripts for manual and automated mobile and web testing.</li>
+                                                    <li>Performed performance and functional testing with Cypress and JMeter.</li>
+                                                    <li>Executed mobile QA using Appium and Android Studio debugging.</li>
+                                                 </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my-8 border-t border-[var(--glass-border)]"></div>
+                                <div>
+                                    <div class="flex items-center space-x-2 mb-4">
+                                        <span class="material-symbols-rounded text-2xl">school</span>
+                                        <h2 class="text-xl font-bold">Campus Projects</h2>
+                                    </div>
+                                     <div class="timeline-container">
+                                        <div class="timeline-line"></div>
+                                        <div class="space-y-4">
+                                            <div class="timeline-item">
+                                                 <h3 class="font-semibold text-lg">Implementation of Perlin Noise for Procedural Content Generation in Unity Engine</h3>
+                                                 <p class="text-sm font-medium">Personal Research Thesis | Solo Project</p>
+                                                 <p class="text-xs italic mb-2">2024</p>
+                                                 <ul class="custom-list text-sm">
+                                                    <li>Conducted in-depth research on procedural content generation techniques with a focus on Perlin noise for object generation.</li>
+                                                    <li>Developed prototype algorithms in Python to test generation parameters and optimise noise patterns for natural-looking outputs.</li>
+                                                    <li>Ported the solution to Unity using C#, implementing real-time procedural terrain generation as part of a Unity demo scene.</li>
+                                                    <li>Tuned performance for runtime efficiency and experimented with multiple noise layers.</li>
+                                                 </ul>
+                                            </div>
+                                            <div class="timeline-item">
+                                                 <h3 class="font-semibold text-lg">Academic IF - Library Management Apps (Web Based)</h3>
+                                                 <p class="text-sm font-medium">Group Project</p>
+                                                 <p class="text-xs italic mb-2">2023</p>
+                                                 <ul class="custom-list text-sm">
+                                                    <li>Collaborated on the development of a full-stack library management system designed to manage academic library operations digitally.</li>
+                                                    <li>Built interactive front-end components in React and ensured cross-browser compatibility using Selenium-based test automation.</li>
+                                                    <li>Focused on user flow optimisation and integrated basic state management with React Context for data consistency.</li>
+                                                 </ul>
+                                            </div>
+                                            <div class="timeline-item">
+                                                 <h3 class="font-semibold text-lg">Smart Mountain Article (Web Based)</h3>
+                                                 <p class="text-sm font-medium">Group Project</p>
+                                                 <p class="text-xs italic mb-2">2022</p>
+                                                 <ul class="custom-list text-sm">
+                                                    <li>Processed and structured survey datasets for reporting purposes.</li>
+                                                    <li>Implemented the front-end using React, with a focus on responsive UI design.</li>
+                                                    <li>Developed and executed Selenium-based test cases to validate form inputs, user navigation, and data visualisation integrity.</li>
+                                                 </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="skills" class="tab-panel">
+                             <div class="space-y-4">
+                                <div>
+                                   <h3 class="font-semibold text-base mb-2">Programming Languages</h3>
+                                   <div class="flex flex-wrap gap-2">
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">C#</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">C++</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Python</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Java</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Web Scripting (HTML/CSS/JS)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">GDScript</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Visual Scripting (Blueprint)</span>
+                                   </div>
+                                </div>
+                                <div>
+                                   <h3 class="font-semibold text-base mb-2">Game Development</h3>
+                                   <div class="flex flex-wrap gap-2">
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Game Engine Proficiency (Unreal, Unity, Godot)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Game Analysis (Nsight, RenderDoc)</span>
+                                   </div>
+                                </div>
+                                <div>
+                                   <h3 class="font-semibold text-base mb-2">Web Development</h3>
+                                   <div class="flex flex-wrap gap-2">
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Front-End Frameworks (React, Angular)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">UI Libraries & CSS Toolkits (Tailwind, Bootstrap)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Back-End & Routing (Express.js, Laravel)</span>
+                                   </div>
+                                </div>
+                                <div>
+                                   <h3 class="font-semibold text-base mb-2">Software Automation Testing</h3>
+                                   <div class="flex flex-wrap gap-2">
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">End-to-End Testing (Cypress, Selenium)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Mobile Test Automation (Appium)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Performance Testing (JMeter)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Mobile Debugging Tool (Android Studio Debugger)</span>
+                                   </div>
+                                </div>
+                                 <div>
+                                   <h3 class="font-semibold text-base mb-2">DevOps & Methodologies</h3>
+                                   <div class="flex flex-wrap gap-2">
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Software Lifecycle Models (Agile, Waterfall)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">CI/CD Implementation (Github Action)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Containerisation & Orchestration (Docker)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Project Tracking (JIRA)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Version Control (Git)</span>
+                                   </div>
+                                </div>
+                                <div>
+                                   <h3 class="font-semibold text-base mb-2">Systems & Hardware Technical Specialist </h3>
+                                   <div class="flex flex-wrap gap-2">
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Windows Systems Engineering</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">macOS Systems Integration</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Linux Platform Engineering (Arch/Fedora/Ubuntu)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Cross-Platform Infrastructure</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Hardware Diagnostics & Configuration</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">System-Level Troubleshooting</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Device & Platform Optimisation</span>
+                                   </div>
+                                </div>
+                                <div>
+                                   <h3 class="font-semibold text-base mb-2">Creative Software</h3>
+                                   <div class="flex flex-wrap gap-2">
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">3D & Motion Graphics (Blender)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Digital Imaging (Photoshop / GIMP)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">Video Editing Suites (Premiere, Resolve, Kdenlive)</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">2D Drawing Tools (OpenToonz, Krita, Medibang)</span>
+                                   </div>
+                                </div>
+                                 <div>
+                                   <h3 class="font-semibold text-base mb-2">Currently Learning</h3>
+                                   <div class="flex flex-wrap gap-2">
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">LLM Implementation & Fine-Tuning</span>
+                                       <span class="skill-tag text-sm font-medium px-3 py-1 inner-element">DevOps Tools (Kubernetes, Prometheus)</span>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="certifications" class="tab-panel">
+                             <ul class="space-y-6">
+                                <li class="flex items-start gap-5">
+                                    <span class="material-symbols-rounded text-xl mt-1 text-[var(--timeline-dot-bg)]">verified</span>
+                                    <div>
+                                        <h3 class="font-semibold">Junior Web Programmer Competence</h3>
+                                        <p class="text-xs italic mb-2">National Digital Talent Certification (Indonesia) [2024]</p>
+                                        <p class="text-sm text-justify">Accredited by Indonesia’s National Professional Certification Board (BNSP), this certification validates competence in web development using HTML, CSS, and JavaScript. Demonstrated ability to build responsive user interfaces, manipulate the DOM, handle basic form logic, and follow clean coding practices aligned with professional development standards.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-5">
+                                    <span class="material-symbols-rounded text-xl mt-1 text-[var(--timeline-dot-bg)]">verified</span>
+                                     <div>
+                                        <h3 class="font-semibold">TOEFL Certificate</h3>
+                                        <p class="text-xs italic mb-2">Educational Testing Service (ETS) — Paper-Based Test (PBT) [2024]</p>
+                                        <p class="text-sm text-justify">Certified by ETS (Educational Testing Service) with a score of 540 on the Paper-Based Test (PBT), demonstrating English proficiency in reading, listening, and grammar. suitable for academic, business, and international communication.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-5">
+                                    <span class="material-symbols-rounded text-xl mt-1 text-[var(--timeline-dot-bg)]">verified</span>
+                                    <div>
+                                        <h3 class="font-semibold">Cisco Networking Academy CCNAv7</h3>
+                                        <p class="text-xs italic mb-2">Cisco – Networking & Infrastructure Fundamentals [2023]</p>
+                                        <p class="text-sm text-justify">Completed foundational training in networking principles, covering IP addressing, routing and switching, LAN/WAN technologies, and network security. Developed hands-on troubleshooting skills using Cisco Packet Tracer and gained understanding of network infrastructure setup and maintenance.</p>
+                                    </div>  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <section class="glass-panel custom-rounded-card p-6 mt-8">
+                    <div class="section-header">
+                        <span class="material-symbols-rounded">contact_mail</span>
+                        <h2 class="text-2xl font-semibold">Contact</h2>
+                    </div>
+                    <p class="text-sm mt-4 leading-relaxed text-center">
+                        For professional inquiries or networking opportunities, communication is welcomed via LinkedIn or email.
+                    </p>
+                    <div class="flex justify-center items-center gap-3 mt-4">
+                        <a href="https://www.linkedin.com/in/mulkyh/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium inner-element skill-tag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="mailto:irshalmulki22@gmail.com" class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium inner-element skill-tag">
+                            <span class="material-symbols-rounded text-base">mail</span>
+                            Email
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const html = document.documentElement;
+        const loader = document.getElementById('loader');
+        const statusBar = document.getElementById('status-bar');
+        const themeToggle = document.getElementById('theme-toggle');
+        const iconLight = document.getElementById('theme-icon-light');
+        const iconDark = document.getElementById('theme-icon-dark');
+        const backgroundContainer = document.querySelector('.background-container');
+        const tabSlider = document.getElementById('tab-slider');
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const panelsWrapper = document.getElementById('panels-wrapper');
+        const clockEl = document.getElementById('clock');
+        const greetingEl = document.getElementById('greeting');
+        const navTabs = document.getElementById('nav-tabs');
+        const leftColumn = document.getElementById('left-column');
+        const rightColumn = document.getElementById('right-column');
+
+        const aiToggleButton = document.getElementById('ai-toggle-button');
+        const aiAssistantPanel = document.getElementById('ai-assistant-panel');
+        const aiCloseButton = document.getElementById('ai-close-button');
+        const askAiButton = document.getElementById('ask-ai-button');
+        const aiPromptInput = document.getElementById('ai-prompt-input');
+        const aiChatLog = document.getElementById('ai-chat-log');
+        const aiSpinner = document.getElementById('ai-spinner');
+        const askAiButtonIcon = document.getElementById('ask-ai-button-icon');
+
+        const cvContext = `
+            Name: Mulky H
+            Title: IT Technical Generalist
+            Summary: IT Generalist & Systems/Hardware Technical Specialist with experience in Networking, SDET Automation, Front-End Development, and Game Programming. Skilled in SDLC, QA, and Graphics Performance Analysis.
+            Education: Universitas Komputer Indonesia, Major in Informatic Engineering, GPA 3.64.
+            Languages: Bahasa Indonesia (Native), English (Fluent Written, TOEFL 540), Japanese (Passive, JLPT N4).
+            Experience:
+            - Freelance: Front-End Dev, QA (Selenium, Appium), Technical Game Dev (Unity, Unreal, Godot).
+            - Internship at PT. Cipta Buana Kunshuliyyah: Front End (React) & QA.
+            - Internship at PT. Memory Netindo Jaya: QA (Cypress, JMeter, Appium).
+            Projects:
+            - Thesis on Perlin Noise for Procedural Content Generation in Unity.
+            - Library Management Web App (React).
+            - Smart Mountain Article Web App (React).
+            Skills:
+            - Languages: C#, C++, Python, Java, JS, GDScript.
+            - Game Dev: Unity, Unreal, Godot, Nsight, RenderDoc.
+            - Web Dev: React, Angular, Tailwind, Express.js, Laravel.
+            - Testing: Cypress, Selenium, Appium, JMeter.
+            - DevOps: Agile, CI/CD (Github Action), Docker, JIRA, Git.
+            - Systems: Windows, macOS, Linux engineering and troubleshooting.
+            - Creative: Blender, Photoshop, Premiere, DaVinci Resolve.
+            Certifications:
+            - Junior Web Programmer (BNSP, Indonesia).
+            - TOEFL PBT (Score: 540).
+            - Cisco CCNAv7.
+            Contact: LinkedIn and Email available.
+        `;
+
+        const funFacts = [
+            "You can ask me on 'Robot' button about this CV!",
+            "This portfolio was built with Tailwind CSS and JavaScript.",
+            "The background is a live animated gradient.",
+            "Try toggling between light and dark mode on 'Theme' Button!",
+            "Check out my campus projects in the 'Experiences' tab."
+        ];
+        
+        function setButtonLoading(isLoading) {
+            askAiButton.disabled = isLoading;
+            aiSpinner.classList.toggle('hidden', !isLoading);
+            askAiButtonIcon.classList.toggle('hidden', isLoading);
+        }
+
+        function appendMessage(text, type) {
+            const messageWrapper = document.createElement('div');
+            const messageBubble = document.createElement('div');
+            
+            if (type === 'ai-typing') {
+                 messageBubble.innerHTML = `<div class="typing-indicator"><span></span><span></span><span></span></div>`;
+                 messageBubble.className = 'ai-message';
+            } else {
+                 messageBubble.textContent = text;
+                 messageBubble.className = type === 'user' ? 'user-message' : 'ai-message';
+            }
+            messageWrapper.appendChild(messageBubble);
+            aiChatLog.appendChild(messageWrapper);
+            aiChatLog.scrollTop = aiChatLog.scrollHeight;
+            return messageWrapper;
+        }
+
+        async function handleAiQuery() {
+            const question = aiPromptInput.value.trim();
+            if (!question) return;
+
+            appendMessage(question, 'user');
+            aiPromptInput.value = '';
+            setButtonLoading(true);
+            const typingIndicator = appendMessage('', 'ai-typing');
+
+            const apiKey = "AIzaSyCY5uWCebLRc6jov59mW3iZ_eaWRhHsf5k";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            const prompt = `Based on this CV: "${cvContext}". Answer the following question concisely more short are better and in a friendly tone, and with a maximum of 15 words. Question: "${question}"`;
+            const payload = { contents: [{ parts: [{ text: prompt }] }] };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) throw new Error(`API error: ${response.status}`);
+                
+                const result = await response.json();
+                const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                
+                if (text) {
+                    appendMessage(text, 'ai');
+                } else {
+                    appendMessage("Sorry, I couldn't get a response. Please try again.", 'ai');
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                appendMessage("An error occurred. Please check the console.", 'ai');
+            } finally {
+                typingIndicator.remove();
+                setButtonLoading(false);
+                aiPromptInput.focus();
+            }
+        }
+        
+        aiToggleButton.addEventListener('click', () => {
+            aiAssistantPanel.classList.toggle('visible');
+            if (aiAssistantPanel.classList.contains('visible')) {
+                aiPromptInput.focus();
+            }
+        });
+        aiCloseButton.addEventListener('click', () => {
+            aiAssistantPanel.classList.remove('visible');
+        });
+        askAiButton.addEventListener('click', handleAiQuery);
+        aiPromptInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleAiQuery();
+        });
+
+
+        const updateTheme = (isDark) => {
+            html.classList.toggle('dark', isDark);
+            iconLight.classList.toggle('hidden', !isDark);
+            iconDark.classList.toggle('hidden', isDark);
+        };
+
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        let isDarkMode = savedTheme === 'dark';
+        updateTheme(isDarkMode);
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.add('theme-transition');
+            isDarkMode = !isDarkMode;
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            updateTheme(isDarkMode);
+             setTimeout(() => {
+                document.body.classList.remove('theme-transition');
+            }, 500);
+        });
+
+        window.addEventListener('scroll', () => {
+            const isHidden = window.scrollY > 50;
+            statusBar.classList.toggle('hidden-top-element', isHidden);
+            if (isHidden) {
+                aiAssistantPanel.classList.remove('visible');
+            }
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            const xOffset = (clientX / innerWidth - 0.5) * -40;
+            const yOffset = (clientY / innerHeight - 0.5) * -40;
+            requestAnimationFrame(() => {
+                backgroundContainer.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+            });
+        });
+        
+        function moveSlider(target) {
+            if (!target) return;
+            tabSlider.style.width = `${target.offsetWidth}px`;
+            tabSlider.style.left = `${target.offsetLeft}px`;
+        }
+
+        let isAnimatingLayout = false;
+
+        function animatePanels(elements, action) {
+            const panels = [];
+            elements.forEach(el => {
+                if (el.classList.contains('glass-panel')) {
+                    panels.push(el);
+                }
+                panels.push(...el.querySelectorAll('.glass-panel'));
+            });
+            
+            panels.forEach(panel => {
+                if (action === 'hide') {
+                    panel.classList.remove('loaded');
+                } else {
+                    panel.classList.add('loaded');
+                }
+            });
+        }
+
+        function setActiveTab(tabId) {
+            if (isAnimatingLayout) return;
+
+            const currentActiveButton = document.querySelector('.tab-button.active');
+            const previousTabId = currentActiveButton ? currentActiveButton.dataset.tab : null;
+            const button = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+
+            if (!button || currentActiveButton === button) return;
+
+            const isTabletOrDesktop = window.innerWidth >= 768; 
+            const isIntroActive = tabId === 'introduction';
+            const wasIntroActive = previousTabId === 'introduction';
+            const layoutIsChanging = isTabletOrDesktop && (isIntroActive !== wasIntroActive);
+
+            const currentPanel = panelsWrapper.querySelector('.tab-panel.active');
+            const nextPanel = document.getElementById(tabId);
+            if (!nextPanel) return;
+            
+            if (currentPanel) {
+                panelsWrapper.style.height = `${currentPanel.offsetHeight}px`;
+            }
+
+            if (layoutIsChanging) {
+                isAnimatingLayout = true;
+                const panelsToHide = wasIntroActive ? [rightColumn] : [leftColumn, rightColumn];
+                animatePanels(panelsToHide, 'hide');
+
+                setTimeout(() => {
+                    if (currentActiveButton) currentActiveButton.classList.remove('active');
+                    button.classList.add('active');
+                    moveSlider(button);
+
+                    if (currentPanel) currentPanel.classList.remove('active');
+                    nextPanel.classList.add('active');
+                    
+                    if (isIntroActive) {
+                        leftColumn.classList.add('hidden');
+                        rightColumn.classList.remove('md:col-span-2');
+                        rightColumn.classList.add('md:col-span-3');
+                    } else {
+                        leftColumn.classList.remove('hidden');
+                        rightColumn.classList.remove('md:col-span-3');
+                        rightColumn.classList.add('md:col-span-2');
+                    }
+                    
+                    requestAnimationFrame(() => {
+                        panelsWrapper.style.height = `${nextPanel.offsetHeight}px`;
+                    });
+
+                }, 500);
+
+                setTimeout(() => {
+                    const panelsToShow = isIntroActive ? [rightColumn] : [leftColumn, rightColumn];
+                    animatePanels(panelsToShow, 'show');
+                    isAnimatingLayout = false;
+                }, 600); 
+
+            } else {
+                if (currentActiveButton) currentActiveButton.classList.remove('active');
+                button.classList.add('active');
+                moveSlider(button);
+
+                if (currentPanel) currentPanel.classList.remove('active');
+                nextPanel.classList.add('active');
+                
+                requestAnimationFrame(() => {
+                    panelsWrapper.style.height = `${nextPanel.offsetHeight}px`;
+                });
+            }
+        }
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                setActiveTab(button.dataset.tab);
+            });
+        });
+
+        panelsWrapper.addEventListener('transitionend', e => {
+            if (e.propertyName === 'height' && !isAnimatingLayout) {
+                panelsWrapper.style.height = 'auto';
+            }
+        });
+
+        function updateClock() {
+            clockEl.textContent = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        function handleGreetingAnimation() {
+            const showMessage = (text) => {
+                greetingEl.textContent = text;
+                greetingEl.style.maxWidth = greetingEl.scrollWidth + 'px';
+                greetingEl.style.opacity = 1;
+
+                setTimeout(() => {
+                    greetingEl.style.maxWidth = '0';
+                    greetingEl.style.opacity = 0;
+                }, 10000); 
+            };
+            
+            const hours = new Date().getHours();
+            let greetingText = 'Good! ';
+            if (hours < 12) { greetingText += 'Morning!'; } 
+            else if (hours < 18) { greetingText += 'Afternoon!'; } 
+            else { greetingText += 'Evening!'; }
+            showMessage(greetingText);
+            
+            setTimeout(() => {
+                const cycleFacts = () => {
+                    const randomIndex = Math.floor(Math.random() * funFacts.length);
+                    showMessage(funFacts[randomIndex]);
+                };
+                cycleFacts();
+                setInterval(cycleFacts, 20000);
+            }, 10000);
+        }
+
+        function checkAspectRatio() {
+            const aspectRatio = window.innerWidth / window.innerHeight;
+            navTabs.classList.toggle('icons-only', aspectRatio < 16/9);
+        }
+
+        function initializePage() {
+            loader.classList.add('hidden');
+            
+            const isDesktop = window.innerWidth >= 1024;
+            const defaultTabId = isDesktop ? 'introduction' : 'experience';
+            
+            const defaultTabButton = document.querySelector(`.tab-button[data-tab="${defaultTabId}"]`);
+            if (defaultTabButton) defaultTabButton.classList.add('active');
+            
+            const defaultPanel = document.getElementById(defaultTabId);
+            if (defaultPanel) defaultPanel.classList.add('active');
+            
+            const isTabletOrDesktop = window.innerWidth >= 768;
+            if (isTabletOrDesktop && defaultTabId === 'introduction') {
+                leftColumn.classList.add('hidden');
+                rightColumn.classList.remove('md:col-span-2');
+                rightColumn.classList.add('md:col-span-3');
+            }
+            
+            document.querySelectorAll('.glass-panel').forEach((panel, index) => {
+                if (panel.id === 'ai-assistant-panel') {
+                    return;
+                }
+                 setTimeout(() => { panel.classList.add('loaded'); }, index * 100);
+            });
+            
+            checkAspectRatio();
+            
+            setTimeout(() => {
+                moveSlider(defaultTabButton);
+                if (defaultPanel) {
+                   panelsWrapper.style.height = `${defaultPanel.offsetHeight}px`;
+                }
+                setTimeout(() => panelsWrapper.style.height = 'auto', 500);
+            }, 50);
+
+            setTimeout(() => {
+                handleGreetingAnimation();
+            }, 1000);
+        }
+        
+        window.addEventListener('load', initializePage);
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            panelsWrapper.style.transition = 'none';
+            checkAspectRatio();
+            
+            const activeTabButton = document.querySelector('.tab-button.active');
+            if (activeTabButton) {
+                const activeTabId = activeTabButton.dataset.tab;
+                const isTabletOrDesktop = window.innerWidth >= 768;
+                
+                if (isTabletOrDesktop && activeTabId === 'introduction') {
+                    leftColumn.classList.add('hidden');
+                    rightColumn.classList.remove('md:col-span-2');
+                    rightColumn.classList.add('md:col-span-3');
+                } else {
+                    leftColumn.classList.remove('hidden');
+                    rightColumn.classList.add('md:col-span-2');
+                    rightColumn.classList.remove('md:col-span-3');
+                }
+                moveSlider(activeTabButton);
+            }
+
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                panelsWrapper.style.transition = '';
+            }, 250);
+        });
+    });
+    </script>
+</body>
+</html>
