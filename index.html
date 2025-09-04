@@ -374,9 +374,11 @@
             <div id="clock" class="text-sm font-semibold pl-1"></div>
             <div id="greeting" class="text-sm font-semibold whitespace-nowrap px-2"></div>
             <div class="flex items-center gap-2 flex-shrink-0">
+                <!--
                 <button id="ai-toggle-button" class="status-button rounded-full flex items-center justify-center text-xl w-8 h-8">
                     <span class="material-symbols-rounded">smart_toy</span>
                 </button>
+                 -->
                  <button id="theme-toggle" class="status-button rounded-full flex items-center justify-center text-xl w-8 h-8">
                     <span id="theme-icon-light" class="hidden material-symbols-rounded">light_mode</span>
                     <span id="theme-icon-dark" class="hidden material-symbols-rounded">dark_mode</span>
@@ -871,7 +873,7 @@
             setButtonLoading(true);
             const typingIndicator = appendMessage('', 'ai-typing');
 
-            const apiKey = "AIzaSyCY5uWCebLRc6jov59mW3iZ_eaWRhHsf5k";
+            const apiKey = "-";
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
             const prompt = `Based on this CV: "${cvContext}". Answer in <15 words, friendly. Asked by interested people, not author. Question: "${question}"`;
             const payload = { contents: [{ parts: [{ text: prompt }] }] };
@@ -1178,5 +1180,6 @@
     </script>
 </body>
 </html>
+
 
 
