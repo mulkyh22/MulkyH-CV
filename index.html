@@ -904,19 +904,24 @@
             }
         }
         
-        aiToggleButton.addEventListener('click', () => {
-            aiAssistantPanel.classList.toggle('visible');
-            if (aiAssistantPanel.classList.contains('visible')) {
-                aiPromptInput.focus();
-            }
-        });
-        aiCloseButton.addEventListener('click', () => {
-            aiAssistantPanel.classList.remove('visible');
-        });
-        askAiButton.addEventListener('click', handleAiQuery);
-        aiPromptInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleAiQuery();
-        });
+        if (aiToggleButton && aiCloseButton && askAiButton && aiPromptInput) {
+            aiToggleButton.addEventListener('click', () => {
+                aiAssistantPanel.classList.toggle('visible');
+                if (aiAssistantPanel.classList.contains('visible')) {
+                    aiPromptInput.focus();
+                }
+            });
+        
+            aiCloseButton.addEventListener('click', () => {
+                aiAssistantPanel.classList.remove('visible');
+            });
+        
+            askAiButton.addEventListener('click', handleAiQuery);
+        
+            aiPromptInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleAiQuery();
+            });
+        }
 
 
         const updateTheme = (isDark) => {
@@ -1180,6 +1185,7 @@
     </script>
 </body>
 </html>
+
 
 
 
